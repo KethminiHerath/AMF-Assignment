@@ -1,0 +1,36 @@
+﻿@page
+@model Crud.Pages.Tasks.IndexModel
+@{
+}
+
+
+<br>
+<h2>List of Tasks</h2>
+<a class= 'btn btn-primary btn-sm' href='/Tasks/Create'>New Task </a>
+<table class= "table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Description</th>
+
+		</tr>
+
+
+	</thead>
+	<tbody>
+
+		@foreach(var task in Model.listTasks)
+		{
+			<tr>
+				<td>@task.id</td>
+				<td>@task.title</td>
+				<td>@task.description</td>
+				<a class="btn btn-primary btn-sm" href="/Tasks/Edit?id=@task.id">Edit</a>
+				<a class="btn btn-primary btn-sm" href="/Tasks/Delete?id=@task.id">Delete</a>
+			</tr>
+		}
+	</tbody>
+	</table>
+    
+    
